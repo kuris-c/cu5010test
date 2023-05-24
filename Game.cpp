@@ -28,6 +28,10 @@ bool Game::Run()
 
 		Window::Instance()->WipeRenderer();
 		Input::Instance()->Update();
+		if (Input::Instance()->IsWindowClosed())
+		{
+			return false;
+		}
 
 		GameState* nextState = gameState->Update(deltaTime);
 

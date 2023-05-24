@@ -30,9 +30,7 @@ public:
 	static bool Initialize();
 
 	// Load and Unload
-	static bool Load(const std::string& filename,
-		const std::string& tag,
-		FontSize fontSize = FontSize::Small);
+	static bool Load(const std::string& filename, const std::string& tag, FontSize fontSize = FontSize::Small);
 	static void Unload(const std::string& tag = "");
 
 	// Shutdown

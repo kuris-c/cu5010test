@@ -23,24 +23,6 @@ void Utility::RemoveCharacter(std::string& string, char character)
 	}
 }
 
-void Utility::ParseString(std::string string, std::vector<std::string, std::string>& subStrings, char token)
-{
-	size_t start = 0;
-	size_t end = 0;
-
-	assert(!string.empty());
-
-	while (end != std::string::npos)
-	{
-		end = string.find(token, start);
-		if ((end - start) > 0)
-		{
-			subStrings.push_back(string.substr(start, end - start));
-		}
-		start = end + 1;
-	}
-}
-
 void Utility::Log(Destination destination, float value, const std::string& label)
 {
 	if (!label.empty())

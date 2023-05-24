@@ -88,12 +88,12 @@ void MenuKey::Update(int deltaTime)
 		isDirty = true;
 	}
 
+	if (Input::Instance()->IsKeyPressed(HM_KEY_UP) && !isKeyPressed)
 	{
 		if (menuActive == Index::Index_1)
 		{
 			menuActive = static_cast<Index>(menuItems.size() - 1);
 		}
-
 		else
 		{
 			menuActive = static_cast<Index>(static_cast<int>(menuActive) - 1);

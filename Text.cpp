@@ -2,7 +2,7 @@
 #include "Text.h"
 
 // Folder and Pointer
-std::string Text::rootFolder = "Assets/Fonts/";
+std::string Text::rootFolder = "Assets/";
 std::unique_ptr<Fonts> Text::fonts = std::make_unique<Fonts>();
 
 Text::Text(const Text& copy)

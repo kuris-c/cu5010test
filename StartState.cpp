@@ -3,8 +3,9 @@
 
 bool StartState::OnEnter()
 {
+	Text::Initialize();
     image.Load("StartMenu.png");
-    menu = std::make_unique<MenuKey>("Fonts/Gothic.ttf", MenuKey::Alignment::Bottom);
+    menu = std::make_unique<MenuKey>("Fonts/Quikhand.ttf", MenuKey::Alignment::Bottom);
     menu->SetMenuText(MenuKey::Index::Index_1, "Play game");
     menu->SetMenuText(MenuKey::Index::Index_2, "Quit game");
 
@@ -22,13 +23,11 @@ GameState* StartState::Update(int deltaTime)
 
 	if (menu->GetMenuChoice() == static_cast<MenuKey::Index>(MenuOption::Play))
 	{
-		image.StopMusic();
 		return new PlayState;
 	}
 
 	if (menu->GetMenuChoice() == static_cast<MenuKey::Index>(MenuOption::Quit))
 	{
-		image.StopMusic();
 		return nullptr;
 	}
 

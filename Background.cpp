@@ -4,7 +4,7 @@
 Background::~Background()
 {
 	music.Unload();
-	image.Unload("bg");
+	image.Unload();
 }
 
 void Background::Load(const std::string& imageFilename, const std::string& musicFilename)
@@ -13,6 +13,7 @@ void Background::Load(const std::string& imageFilename, const std::string& music
 
 	if (musicFilename != "")
 	{
+		music.Initialise();
 		music.Load(musicFilename, true);
 		music.SetVolume(0.5f);
 	}
